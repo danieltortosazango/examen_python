@@ -8,9 +8,7 @@ def get_list(nombre_fichero_palabras):
     if (len(texto) == 0):
         raise ValueError("El texto está vacío")
     diccionario = {}
-
     lista = texto.split(" ")
-    #cuando utilizo una lista creada en el python funciona correctamente pero si utilizo la leida por el fichero no lo lee bien
     #lista = ["hola", "que", "tal", "h"] 
     contador_longitud_mayor = 0
     for palabra in lista:
