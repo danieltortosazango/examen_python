@@ -21,6 +21,7 @@ class Cinema:
         """        
         row = { i : None for i in range(1, self.__seats_per_row+1) }        
         for j in range(1, self.__rows+1):
+            row = { i : None for i in range(1, self.__seats_per_row+1) }
             self.__seating.append(row)
         
     def print_seating(self):
@@ -72,3 +73,4 @@ seats[0][1]=3
 total = 0
 cinema.count_free_seats(seats,total)
 print("total: "+str(total))
+        

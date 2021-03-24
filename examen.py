@@ -8,22 +8,23 @@ def get_list(nombre_fichero_palabras):
     if (len(texto) == 0):
         raise ValueError("El texto está vacío")
     diccionario = {}
-    lista = ["hola", "que", "tal", "h","hh"] 
+
+    lista = texto.split(" ")
+    #cuando utilizo una lista creada en el python funciona correctamente pero si utilizo la leida por el fichero no lo lee bien
+    #lista = ["hola", "que", "tal", "h"] 
     contador_longitud_mayor = 0
-    lista_mismo_tamanyo = []
     for palabra in lista:
         if(contador_longitud_mayor < len(palabra)):
             contador_longitud_mayor = len(palabra)
-    for i in range(0, contador_longitud_mayor):
-        lista = []
+    for i in range(0, contador_longitud_mayor + 1):
+        lista_llenar = []
         for palabra in lista:
             if(len(palabra) == i):
-                lista.append(palabra)
-        print(lista[0])
-        diccionario[tamanyo_palabra] = lista
-        
+                lista_llenar.append(palabra)
 
-    
+        if(len(lista_llenar) >0):
+            diccionario[i] = lista_llenar
+
     return diccionario
 
 def mas_antiguos(lista_libros, anyo):
@@ -79,8 +80,6 @@ lista = [libro1,libro2,libro3]
 lista_prueba = mas_antiguos(lista, 2005)
 print(lista_prueba)
 """
-
-#if __name__ == "__main__":
-#    unittest.main()
-
 print(get_list("documento_lista"))
+if __name__ == "__main__":
+    unittest.main()
